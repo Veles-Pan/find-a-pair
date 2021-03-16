@@ -1,119 +1,119 @@
-(function(t) {
-	function e(e) {
+(function(e) {
+	function t(t) {
 		for (
-			var n, i, o = e[0], s = e[1], d = e[2], f = 0, b = [];
+			var r, i, o = t[0], s = t[1], d = t[2], f = 0, l = [];
 			f < o.length;
 			f++
 		)
 			(i = o[f]),
-				Object.prototype.hasOwnProperty.call(c, i) && c[i] && b.push(c[i][0]),
+				Object.prototype.hasOwnProperty.call(c, i) && c[i] && l.push(c[i][0]),
 				(c[i] = 0);
-		for (n in s) Object.prototype.hasOwnProperty.call(s, n) && (t[n] = s[n]);
-		u && u(e);
-		while (b.length) b.shift()();
-		return a.push.apply(a, d || []), r();
+		for (r in s) Object.prototype.hasOwnProperty.call(s, r) && (e[r] = s[r]);
+		u && u(t);
+		while (l.length) l.shift()();
+		return a.push.apply(a, d || []), n();
 	}
-	function r() {
-		for (var t, e = 0; e < a.length; e++) {
-			for (var r = a[e], n = !0, o = 1; o < r.length; o++) {
-				var s = r[o];
-				0 !== c[s] && (n = !1);
+	function n() {
+		for (var e, t = 0; t < a.length; t++) {
+			for (var n = a[t], r = !0, o = 1; o < n.length; o++) {
+				var s = n[o];
+				0 !== c[s] && (r = !1);
 			}
-			n && (a.splice(e--, 1), (t = i((i.s = r[0]))));
+			r && (a.splice(t--, 1), (e = i((i.s = n[0]))));
 		}
-		return t;
+		return e;
 	}
-	var n = {},
+	var r = {},
 		c = { app: 0 },
 		a = [];
-	function i(e) {
-		if (n[e]) return n[e].exports;
-		var r = (n[e] = { i: e, l: !1, exports: {} });
-		return t[e].call(r.exports, r, r.exports, i), (r.l = !0), r.exports;
+	function i(t) {
+		if (r[t]) return r[t].exports;
+		var n = (r[t] = { i: t, l: !1, exports: {} });
+		return e[t].call(n.exports, n, n.exports, i), (n.l = !0), n.exports;
 	}
-	(i.m = t),
-		(i.c = n),
-		(i.d = function(t, e, r) {
-			i.o(t, e) || Object.defineProperty(t, e, { enumerable: !0, get: r });
+	(i.m = e),
+		(i.c = r),
+		(i.d = function(e, t, n) {
+			i.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n });
 		}),
-		(i.r = function(t) {
+		(i.r = function(e) {
 			"undefined" !== typeof Symbol &&
 				Symbol.toStringTag &&
-				Object.defineProperty(t, Symbol.toStringTag, { value: "Module" }),
-				Object.defineProperty(t, "__esModule", { value: !0 });
+				Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+				Object.defineProperty(e, "__esModule", { value: !0 });
 		}),
-		(i.t = function(t, e) {
-			if ((1 & e && (t = i(t)), 8 & e)) return t;
-			if (4 & e && "object" === typeof t && t && t.__esModule) return t;
-			var r = Object.create(null);
+		(i.t = function(e, t) {
+			if ((1 & t && (e = i(e)), 8 & t)) return e;
+			if (4 & t && "object" === typeof e && e && e.__esModule) return e;
+			var n = Object.create(null);
 			if (
-				(i.r(r),
-				Object.defineProperty(r, "default", { enumerable: !0, value: t }),
-				2 & e && "string" != typeof t)
+				(i.r(n),
+				Object.defineProperty(n, "default", { enumerable: !0, value: e }),
+				2 & t && "string" != typeof e)
 			)
-				for (var n in t)
+				for (var r in e)
 					i.d(
-						r,
 						n,
-						function(e) {
-							return t[e];
-						}.bind(null, n)
+						r,
+						function(t) {
+							return e[t];
+						}.bind(null, r)
 					);
-			return r;
+			return n;
 		}),
-		(i.n = function(t) {
-			var e =
-				t && t.__esModule
+		(i.n = function(e) {
+			var t =
+				e && e.__esModule
 					? function() {
-							return t["default"];
+							return e["default"];
 					  }
 					: function() {
-							return t;
+							return e;
 					  };
-			return i.d(e, "a", e), e;
+			return i.d(t, "a", t), t;
 		}),
-		(i.o = function(t, e) {
-			return Object.prototype.hasOwnProperty.call(t, e);
+		(i.o = function(e, t) {
+			return Object.prototype.hasOwnProperty.call(e, t);
 		}),
 		(i.p = "/card-game/");
 	var o = (window["webpackJsonp"] = window["webpackJsonp"] || []),
 		s = o.push.bind(o);
-	(o.push = e), (o = o.slice());
-	for (var d = 0; d < o.length; d++) e(o[d]);
+	(o.push = t), (o = o.slice());
+	for (var d = 0; d < o.length; d++) t(o[d]);
 	var u = s;
-	a.push([0, "chunk-vendors"]), r();
+	a.push([0, "chunk-vendors"]), n();
 })({
-	0: function(t, e, r) {
-		t.exports = r("56d7");
+	0: function(e, t, n) {
+		e.exports = n("56d7");
 	},
-	"48e9": function(t, e, r) {},
-	"56d7": function(t, e, r) {
+	"48e9": function(e, t, n) {},
+	"56d7": function(e, t, n) {
 		"use strict";
-		r.r(e);
-		r("e260"), r("e6cf"), r("cca6"), r("a79d");
-		var n = r("7a23");
-		function c(t, e, r, c, a, i) {
-			var o = Object(n["k"])("StartGame"),
-				s = Object(n["k"])("Game"),
-				d = Object(n["k"])("EndGame");
+		n.r(t);
+		n("e260"), n("e6cf"), n("cca6"), n("a79d");
+		var r = n("7a23");
+		function c(e, t, n, c, a, i) {
+			var o = Object(r["k"])("StartGame"),
+				s = Object(r["k"])("Game"),
+				d = Object(r["k"])("EndGame");
 			return (
-				Object(n["g"])(),
-				Object(n["c"])(
-					n["a"],
+				Object(r["g"])(),
+				Object(r["c"])(
+					r["a"],
 					null,
 					[
 						a.isGameCreated
-							? Object(n["d"])("", !0)
-							: (Object(n["g"])(),
-							  Object(n["c"])(o, { key: 0, onCard: i.cardNumber }, null, 8, [
+							? Object(r["d"])("", !0)
+							: (Object(r["g"])(),
+							  Object(r["c"])(o, { key: 0, onCard: i.cardNumber }, null, 8, [
 									"onCard",
 							  ])),
 						a.isGameEnded
 							? a.isGameCreated
-								? (Object(n["g"])(), Object(n["c"])(d, { key: 2 }))
-								: Object(n["d"])("", !0)
-							: (Object(n["g"])(),
-							  Object(n["c"])(s, { key: 1, onScore: i.getScore }, null, 8, [
+								? (Object(r["g"])(), Object(r["c"])(d, { key: 2 }))
+								: Object(r["d"])("", !0)
+							: (Object(r["g"])(),
+							  Object(r["c"])(s, { key: 1, onScore: i.getScore }, null, 8, [
 									"onScore",
 							  ])),
 					],
@@ -121,10 +121,10 @@
 				)
 			);
 		}
-		var a = Object(n["o"])("data-v-72696a97");
-		Object(n["i"])("data-v-72696a97");
+		var a = Object(r["o"])("data-v-72696a97");
+		Object(r["i"])("data-v-72696a97");
 		var i = { class: "intro" },
-			o = Object(n["f"])(
+			o = Object(r["f"])(
 				"h1",
 				{ class: "intro__title" },
 				"Игра «Найди пару»",
@@ -132,21 +132,21 @@
 			),
 			s = { class: "form" },
 			d = { for: "card-number", class: "form__label" };
-		Object(n["h"])();
-		var u = a(function(t, e, r, c, a, u) {
+		Object(r["h"])();
+		var u = a(function(e, t, n, c, a, u) {
 				return (
-					Object(n["g"])(),
-					Object(n["c"])("main", i, [
+					Object(r["g"])(),
+					Object(r["c"])("main", i, [
 						o,
-						Object(n["f"])("form", s, [
-							Object(n["f"])(
+						Object(r["f"])("form", s, [
+							Object(r["f"])(
 								"label",
 								d,
-								"Количество карточек: " + Object(n["l"])(a.number),
+								"Количество карточек: " + Object(r["l"])(a.number),
 								1
 							),
-							Object(n["n"])(
-								Object(n["f"])(
+							Object(r["n"])(
+								Object(r["f"])(
 									"input",
 									{
 										class: "form__item form__item_card-number",
@@ -157,24 +157,24 @@
 										id: "card-number",
 										name: "card-number",
 										"onUpdate:modelValue":
-											e[1] ||
-											(e[1] = function(t) {
-												return (a.number = t);
+											t[1] ||
+											(t[1] = function(e) {
+												return (a.number = e);
 											}),
 									},
 									null,
 									512
 								),
-								[[n["m"], a.number]]
+								[[r["m"], a.number]]
 							),
-							Object(n["f"])(
+							Object(r["f"])(
 								"button",
 								{
 									type: "button",
 									class: "form__button",
 									onClick:
-										e[2] ||
-										(e[2] = function() {
+										t[2] ||
+										(t[2] = function() {
 											return u.createGame && u.createGame.apply(u, arguments);
 										}),
 								},
@@ -195,70 +195,77 @@
 					},
 				},
 			};
-		r("ebe3");
+		n("ebe3");
 		(f.render = u), (f.__scopeId = "data-v-72696a97");
-		var b = f,
-			l = Object(n["o"])("data-v-a27616f8");
-		Object(n["i"])("data-v-a27616f8");
-		var m = { class: "gameplay" },
-			p = { class: "gameplay__timer" },
-			h = Object(n["f"])("strong", { class: "text_bold" }, "Your time: ", -1),
+		var l = f,
+			b = Object(r["o"])("data-v-68f41a9a");
+		Object(r["i"])("data-v-68f41a9a");
+		var p = { class: "gameplay" },
+			m = { class: "gameplay__timer" },
+			h = Object(r["f"])("strong", { class: "text_bold" }, "Your time: ", -1),
 			O = { class: "gameplay__score" },
-			j = Object(n["f"])("strong", { class: "text_bold" }, "Your score: ", -1),
-			v = { class: "cards" };
-		Object(n["h"])();
-		var _ = l(function(t, e, r, c, a, i) {
-				var o = Object(n["k"])("CardTemplate");
+			j = Object(r["f"])("strong", { class: "text_bold" }, "Your score: ", -1);
+		Object(r["h"])();
+		var v = b(function(e, t, n, c, a, i) {
+				var o = Object(r["k"])("CardTemplate");
 				return (
-					Object(n["g"])(),
-					Object(n["c"])("main", m, [
-						Object(n["f"])("p", p, [
+					Object(r["g"])(),
+					Object(r["c"])("main", p, [
+						Object(r["f"])("p", m, [
 							h,
-							Object(n["e"])(Object(n["l"])(a.currentTime), 1),
+							Object(r["e"])(Object(r["l"])(a.currentTime), 1),
 						]),
-						Object(n["f"])("p", O, [
+						Object(r["f"])("p", O, [
 							j,
-							Object(n["e"])(Object(n["l"])(a.currentScore), 1),
+							Object(r["e"])(Object(r["l"])(a.currentScore), 1),
 						]),
-						Object(n["f"])("div", v, [
-							(Object(n["g"])(!0),
-							Object(n["c"])(
-								n["a"],
-								null,
-								Object(n["j"])(a.cardInfo, function(t) {
-									return (
-										Object(n["g"])(),
-										Object(n["c"])(
-											o,
-											{ key: t.id, onOpenedCard: i.openCard, cardInfo: t },
-											null,
-											8,
-											["onOpenedCard", "cardInfo"]
-										)
-									);
-								}),
-								128
-							)),
-						]),
+						Object(r["f"])(
+							"div",
+							{
+								class: "cards",
+								style: { pointerEvents: a.isClicksAllowed ? "auto" : "none" },
+							},
+							[
+								(Object(r["g"])(!0),
+								Object(r["c"])(
+									r["a"],
+									null,
+									Object(r["j"])(a.cardInfo, function(e) {
+										return (
+											Object(r["g"])(),
+											Object(r["c"])(
+												o,
+												{ key: e.id, onOpenedCard: i.openCard, cardInfo: e },
+												null,
+												8,
+												["onOpenedCard", "cardInfo"]
+											)
+										);
+									}),
+									128
+								)),
+							],
+							4
+						),
 					])
 				);
 			}),
-			g = (r("7db0"), Object(n["o"])("data-v-39b9fee5")),
-			y = g(function(t, e, r, c, a, i) {
+			C = (n("7db0"), Object(r["o"])("data-v-39b9fee5")),
+			_ = C(function(e, t, n, c, a, i) {
 				return (
-					Object(n["g"])(),
-					Object(n["c"])(
+					Object(r["g"])(),
+					Object(r["c"])(
 						"div",
 						{
-							class: ["card", { card_disabled: r.cardInfo.isDisabled }],
+							class: ["card", { card_disabled: n.cardInfo.isDisabled }],
 							onClick:
-								e[1] ||
-								(e[1] = function() {
+								t[1] ||
+								(t[1] = function() {
 									return i.openCard && i.openCard.apply(i, arguments);
 								}),
 							style: {
-								backgroundColor: r.cardInfo.isActive
-									? r.cardInfo.color
+								backgroundColor: n.cardInfo.isActive
+									? n.cardInfo.color
 									: "#6c6874",
 							},
 						},
@@ -267,7 +274,7 @@
 					)
 				);
 			}),
-			C = {
+			g = {
 				name: "CardTemplate",
 				props: { cardInfo: Object },
 				methods: {
@@ -276,28 +283,29 @@
 					},
 				},
 			};
-		r("5b31");
-		(C.render = y), (C.__scopeId = "data-v-39b9fee5");
-		var I = C,
-			G = {
+		n("5b31");
+		(g.render = _), (g.__scopeId = "data-v-39b9fee5");
+		var y = g,
+			I = {
 				name: "Game",
-				components: { CardTemplate: I },
+				components: { CardTemplate: y },
 				data: function() {
 					return {
 						numberOfCards: parseInt(this.$parent.number),
 						cardInfo: [],
-						cardsList: [],
+						openedCardsList: [],
 						currentTime: 0,
 						currentScore: 0,
 						isFinished: !1,
+						isClicksAllowed: !0,
 						counter: 0,
 					};
 				},
 				methods: {
 					startTimer: function() {
-						var t = this;
+						var e = this;
 						this.timer = setInterval(function() {
-							t.currentTime++;
+							e.currentTime++;
 						}, 1e3);
 					},
 					stopTimer: function() {
@@ -306,55 +314,56 @@
 					addPoint: function() {
 						this.currentScore += 2;
 					},
-					openCard: function(t) {
-						this.cardsList.push(t),
-							(this.cardInfo.find(function(e) {
-								return e.id === t;
-							}).isActive = !this.cardInfo.find(function(e) {
-								return e.id === t;
+					openCard: function(e) {
+						this.openedCardsList.push(e),
+							(this.cardInfo.find(function(t) {
+								return t.id === e;
+							}).isActive = !this.cardInfo.find(function(t) {
+								return t.id === e;
 							}).isActive),
 							this.checkCards();
 					},
 					checkCards: function() {
-						var t = this;
-						this.cardsList.length > 1 &&
+						var e = this;
+						this.openedCardsList.length > 1 &&
 							(this.preventClick(),
-							this.cardInfo.find(function(e) {
-								return e.id === t.cardsList[0];
+							this.cardInfo.find(function(t) {
+								return t.id === e.openedCardsList[0];
 							}).color ===
-								this.cardInfo.find(function(e) {
-									return e.id === t.cardsList[1];
-								}).color && this.cardsList[0] !== this.cardsList[1]
+								this.cardInfo.find(function(t) {
+									return t.id === e.openedCardsList[1];
+								}).color && this.openedCardsList[0] !== this.openedCardsList[1]
 								? (this.addPoint(),
-								  (this.cardInfo.find(function(e) {
-										return e.id === t.cardsList[0];
+								  (this.cardInfo.find(function(t) {
+										return t.id === e.openedCardsList[0];
 								  }).isDisabled = !0),
-								  (this.cardInfo.find(function(e) {
-										return e.id === t.cardsList[1];
+								  (this.cardInfo.find(function(t) {
+										return t.id === e.openedCardsList[1];
 								  }).isDisabled = !0),
-								  (this.cardsList = []))
-								: this.cardsList[0] === this.cardsList[1]
-								? (this.cardsList = [])
+								  (this.openedCardsList = []))
+								: this.openedCardsList[0] === this.openedCardsList[1]
+								? (this.openedCardsList = [])
 								: setTimeout(function() {
-										(t.cardInfo.find(function(e) {
-											return e.id === t.cardsList[0];
+										(e.cardInfo.find(function(t) {
+											return t.id === e.openedCardsList[0];
 										}).isActive = !1),
-											(t.cardInfo.find(function(e) {
-												return e.id === t.cardsList[1];
+											(e.cardInfo.find(function(t) {
+												return t.id === e.openedCardsList[1];
 											}).isActive = !1),
-											(t.cardsList = []);
+											(e.openedCardsList = []);
 								  }, 400));
 					},
 					preventClick: function() {
-						(document.querySelector("#app").style.pointerEvents = "none"),
+						var e = this;
+						(this.isClicksAllowed = !1),
 							setTimeout(function() {
-								document.querySelector("#app").style.pointerEvents = "auto";
+								e.isClicksAllowed = !0;
 							}, 400);
 					},
 					getRandomColor: function() {
-						for (var t = "0123456789ABCDEF", e = "#", r = 0; r < 6; r++)
-							e += t[Math.floor(16 * Math.random())];
-						return e;
+						for (var e = "0123456789ABCDEF", t = "#", n = 0; n < 6; n++)
+							t += e[Math.floor(16 * Math.random())];
+						return t;
 					},
 				},
 				watch: {
@@ -369,53 +378,53 @@
 					},
 				},
 				created: function() {
-					for (var t = this.numberOfCards / 2; t > 0; t--) {
-						var e = this.getRandomColor();
+					for (var e = this.numberOfCards / 2; e > 0; e--) {
+						var t = this.getRandomColor();
 						this.cardInfo.push(
-							{ color: e, isActive: !1, isDisabled: !1, id: this.counter },
-							{ color: e, isActive: !1, isDisabled: !1, id: this.counter + 1 }
+							{ color: t, isActive: !1, isDisabled: !1, id: this.counter },
+							{ color: t, isActive: !1, isDisabled: !1, id: this.counter + 1 }
 						),
 							(this.counter += 2);
 					}
-					for (var r = this.cardInfo.length - 1; r > 0; r--) {
-						var n = Math.floor(Math.random() * (r + 1)),
-							c = [this.cardInfo[n], this.cardInfo[r]];
-						(this.cardInfo[r] = c[0]), (this.cardInfo[n] = c[1]);
+					for (var n = this.cardInfo.length - 1; n > 0; n--) {
+						var r = Math.floor(Math.random() * (n + 1)),
+							c = [this.cardInfo[r], this.cardInfo[n]];
+						(this.cardInfo[n] = c[0]), (this.cardInfo[r] = c[1]);
 					}
 				},
 				mounted: function() {
 					this.startTimer();
 				},
 			};
-		r("8342");
-		(G.render = _), (G.__scopeId = "data-v-a27616f8");
-		var S = G,
-			k = Object(n["o"])("data-v-71dc1036");
-		Object(n["i"])("data-v-71dc1036");
-		var L = { class: "intro" },
-			T = Object(n["f"])(
+		n("8236");
+		(I.render = v), (I.__scopeId = "data-v-68f41a9a");
+		var G = I,
+			k = Object(r["o"])("data-v-71dc1036");
+		Object(r["i"])("data-v-71dc1036");
+		var S = { class: "intro" },
+			L = Object(r["f"])(
 				"h1",
 				{ class: "intro__title" },
 				"Игра «Найди пару» окончена!",
 				-1
 			),
-			w = Object(n["f"])("strong", { class: "intro__text" }, "Ваши баллы:", -1),
-			x = { class: "intro__score" };
-		Object(n["h"])();
-		var E = k(function(t, e, r, c, a, i) {
+			T = Object(r["f"])("strong", { class: "intro__text" }, "Ваши баллы:", -1),
+			w = { class: "intro__score" };
+		Object(r["h"])();
+		var A = k(function(e, t, n, c, a, i) {
 				return (
-					Object(n["g"])(),
-					Object(n["c"])("main", L, [
+					Object(r["g"])(),
+					Object(r["c"])("main", S, [
+						L,
 						T,
-						w,
-						Object(n["f"])("p", x, Object(n["l"])(a.score), 1),
-						Object(n["f"])(
+						Object(r["f"])("p", w, Object(r["l"])(a.score), 1),
+						Object(r["f"])(
 							"button",
 							{
 								class: "intro__button",
 								onClick:
-									e[1] ||
-									(e[1] = function() {
+									t[1] ||
+									(t[1] = function() {
 										return i.restartGame && i.restartGame.apply(i, arguments);
 									}),
 							},
@@ -424,7 +433,7 @@
 					])
 				);
 			}),
-			A = {
+			x = {
 				name: "EndGame",
 				data: function() {
 					return { score: this.$parent.score };
@@ -435,54 +444,54 @@
 					},
 				},
 			};
-		r("62fa");
-		(A.render = E), (A.__scopeId = "data-v-71dc1036");
-		var P = A,
-			M = {
+		n("62fa");
+		(x.render = A), (x.__scopeId = "data-v-71dc1036");
+		var E = x,
+			P = {
 				name: "App",
 				data: function() {
 					return { number: "", isGameCreated: !1, isGameEnded: !0, score: 0 };
 				},
-				components: { StartGame: b, Game: S, EndGame: P },
+				components: { StartGame: l, Game: G, EndGame: E },
 				methods: {
-					cardNumber: function(t) {
-						(this.number = parseInt(t)),
+					cardNumber: function(e) {
+						(this.number = parseInt(e)),
 							(this.isGameCreated = !0),
 							(this.isGameEnded = !1);
 					},
-					getScore: function(t) {
-						this.score = parseInt(t);
+					getScore: function(e) {
+						this.score = parseInt(e);
 					},
 				},
 			};
-		r("9bac");
-		M.render = c;
-		var $ = M;
-		Object(n["b"])($).mount("#app");
+		n("9bac");
+		P.render = c;
+		var M = P;
+		Object(r["b"])(M).mount("#app");
 	},
-	"5b31": function(t, e, r) {
+	"5b31": function(e, t, n) {
 		"use strict";
-		r("a7c0");
+		n("a7c0");
 	},
-	"62fa": function(t, e, r) {
+	"62fa": function(e, t, n) {
 		"use strict";
-		r("48e9");
+		n("48e9");
 	},
-	8342: function(t, e, r) {
+	8236: function(e, t, n) {
 		"use strict";
-		r("9f49");
+		n("ec49");
 	},
-	"9bac": function(t, e, r) {
+	"9bac": function(e, t, n) {
 		"use strict";
-		r("fcdc");
+		n("fcdc");
 	},
-	"9f49": function(t, e, r) {},
-	a7c0: function(t, e, r) {},
-	ebe3: function(t, e, r) {
+	a7c0: function(e, t, n) {},
+	ebe3: function(e, t, n) {
 		"use strict";
-		r("ebed");
+		n("ebed");
 	},
-	ebed: function(t, e, r) {},
-	fcdc: function(t, e, r) {},
+	ebed: function(e, t, n) {},
+	ec49: function(e, t, n) {},
+	fcdc: function(e, t, n) {},
 });
-//# sourceMappingURL=app.72625233.js.map
+//# sourceMappingURL=app.22c30742.js.map
