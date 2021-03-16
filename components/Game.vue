@@ -5,7 +5,7 @@
     <p class="gameplay__score"><strong class="text_bold">Your score: </strong>{{currentScore}}</p>
 
     <div class="cards">
-      <CardTemplate v-for="index in colors" :key="index" @openedCard="openCard" :cardColor='index'/>
+      <CardTemplate v-for="object in colors" :key="object.id" @openedCard="openCard" :cardColor='object'/>
     </div>
 
 </main>
@@ -30,7 +30,8 @@ export default {
       cardsList: [],
       currentTime: 0,
       currentScore: 0,
-      isFinished: false
+      isFinished: false,
+      counter: 0
     }
   },
 
@@ -62,18 +63,33 @@ export default {
     checkCards() {
       if (this.cardsList.length > 1) {
         this.preventClick()
-        if (this.cardsList[0].color === this.cardsList[1].color) {
+        if (this.cardsList[0].color.color === this.cardsList[1].color.color) {
           this.cardsList[0].element.classList.add('card_finished');
           this.cardsList[1].element.classList.add('card_finished');
           this.addPoint();
           this.cardsList = []
         }
         else {
-          this.cardsList[0].isActive = false;
-          this.cardsList[1].isActive = false;
-          this.cardsList = []
+          let changesCards = this.searchCard(this.cardsList[0].color.id, this.cardsList[1].color.id);
+          setTimeout(() => {changesCards[0].isActive = false
+          changesCards[1].isActive = false
+          changesCards[0].id = this.counter
+          changesCards[1].id = this.counter+1
+          this.counter += 2
+          this.cardsList = []}, 400)
+          
         }
       }
+    },
+
+    searchCard(firstId, secondId) {
+      let cardsForClose = [];
+      this.colors.forEach(element => {
+        if (element.id === firstId || element.id === secondId) {
+          cardsForClose.push(element)
+        }
+      });
+      return cardsForClose
     },
 
     preventClick() {
@@ -105,7 +121,13 @@ export default {
   created() {
     for (let i = this.numberOfCards/2; i > 0; i--) {
       let currentColor = this.getRandomColor()
-      this.colors.push(currentColor, currentColor)
+      this.colors.push( {color: currentColor,
+      isActive: false,
+      id: this.counter},
+      {color: currentColor,
+      isActive: false,
+      id: this.counter+1})
+      this.counter += 2
     }
 
     for (let i = this.colors.length - 1; i > 0; i--) {
