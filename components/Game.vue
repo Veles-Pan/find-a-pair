@@ -5,13 +5,11 @@
     <p class="gameplay__score"><strong class="text_bold">Your score: </strong>{{currentScore}}</p>
 
     <div class="cards">
-      <CardTemplate v-for="index in idNames" :key="index" :class="index"/>
+      <CardTemplate v-for="index in colors" :key="index" @openedCard="openCard" :cardColor='index'/>
     </div>
 
 </main>
 
-
-  
 </template>
 
 <script>
@@ -28,22 +26,16 @@ export default {
   data() {
     return {
       numberOfCards: parseInt(this.$parent.number),
-      cardID: [],
-      idNames: [],
+      colors: [],
+      cardsList: [],
       currentTime: 0,
       currentScore: 0,
       isFinished: false
     }
   },
 
-  watch: {
-    isFinished() {
-        this.$emit('score', this.currentScore)
-        this.$parent.isGameEnded = true
-    }
-  },
-
   methods: {
+
     startTimer() {
       this.timer = setInterval(() => {
         this.currentTime++
@@ -55,25 +47,75 @@ export default {
     },
 
     addPoint() {
-      this.currentScore++
+      this.currentScore += 2
+    },
+
+    openCard(element, color, isActive) {
+      this.cardsList.push({
+        element: element,
+        color: color,
+        isActive: isActive
+      })
+      this.checkCards()
+    },
+
+    checkCards() {
+      if (this.cardsList.length > 1) {
+        this.preventClick()
+        if (this.cardsList[0].color === this.cardsList[1].color) {
+          this.cardsList[0].element.classList.add('card_finished');
+          this.cardsList[1].element.classList.add('card_finished');
+          this.addPoint();
+          this.cardsList = []
+        }
+        else {
+          this.cardsList[0].isActive = false;
+          this.cardsList[1].isActive = false;
+          this.cardsList = []
+        }
+      }
+    },
+
+    preventClick() {
+      document.querySelector('#app').style.pointerEvents = 'none';
+      setTimeout(() => {document.querySelector('#app').style.pointerEvents = 'auto'}, 400)
+    },
+
+    getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
     }
   },
 
+    watch: {
+    currentScore() {
+      if (this.currentScore === this.numberOfCards) {
+        this.$emit('score', (this.currentScore * 100) / (this.currentTime * 0.1))
+        this.stopTimer();
+        this.$parent.isGameEnded = true
+      }
+    }
+  },
+
+
   created() {
-    this.cardID = Array.from({ length: this.numberOfCards }, (v, i) =>  i + 1); 
-    
-    for (let i = this.cardID.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1)); 
-      [this.cardID[i], this.cardID[j]] = [this.cardID[j], this.cardID[i]];
+    for (let i = this.numberOfCards/2; i > 0; i--) {
+      let currentColor = this.getRandomColor()
+      this.colors.push(currentColor, currentColor)
     }
 
-    this.idNames = this.cardID.map(function(num) {
-    return 'card-' + num;
-});
+    for (let i = this.colors.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1)); 
+      [this.colors[i], this.colors[j]] = [this.colors[j], this.colors[i]];
+    }
   },
 
   mounted() {
-    this.startTimer()
+    this.startTimer();
   }
 }
 </script>
@@ -106,13 +148,6 @@ export default {
 
 .card:hover {
   cursor: pointer;
-}
-
-.component-fade-enter-active, .component-fade-leave-active {
-  transition: opacity .3s ease;
-}
-.component-fade-enter, .component-fade-leave-to {
-  opacity: 0;
 }
 
 .gameplay__timer {
