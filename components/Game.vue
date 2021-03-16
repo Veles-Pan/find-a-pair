@@ -63,12 +63,16 @@ export default {
     checkCards() {
       if (this.cardsList.length > 1) {
         this.preventClick()
-        if (this.cardsList[0].color.color === this.cardsList[1].color.color) {
+        if (this.cardsList[0].color.color === this.cardsList[1].color.color && this.cardsList[0].color.id !== this.cardsList[1].color.id) {
           this.cardsList[0].element.classList.add('card_finished');
           this.cardsList[1].element.classList.add('card_finished');
           this.addPoint();
           this.cardsList = []
         }
+        else if (this.cardsList[0].color.id === this.cardsList[1].color.id) {
+          this.cardsList = []
+        }
+        
         else {
           let changesCards = this.searchCard(this.cardsList[0].color.id, this.cardsList[1].color.id);
           setTimeout(() => {changesCards[0].isActive = false
