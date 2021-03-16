@@ -7,7 +7,10 @@
 			<strong class="text_bold">Your score: </strong>{{ currentScore }}
 		</p>
 
-		<div class="cards">
+		<div
+			class="cards"
+			:style="{ pointerEvents: isClicksAllowed ? 'auto' : 'none' }"
+		>
 			<CardTemplate
 				v-for="object in cardInfo"
 				:key="object.id"
@@ -32,10 +35,11 @@ export default {
 		return {
 			numberOfCards: parseInt(this.$parent.number),
 			cardInfo: [],
-			cardsList: [],
+			openedCardsList: [],
 			currentTime: 0,
 			currentScore: 0,
 			isFinished: false,
+			isClicksAllowed: true,
 			counter: 0,
 		};
 	},
@@ -56,7 +60,7 @@ export default {
 		},
 
 		openCard(cardId) {
-			this.cardsList.push(cardId);
+			this.openedCardsList.push(cardId);
 			this.cardInfo.find(
 				(item) => item.id === cardId
 			).isActive = !this.cardInfo.find((item) => item.id === cardId).isActive;
@@ -64,41 +68,44 @@ export default {
 		},
 
 		checkCards() {
-			if (this.cardsList.length > 1) {
+			if (this.openedCardsList.length > 1) {
 				this.preventClick();
 				if (
-					this.cardInfo.find((item) => item.id === this.cardsList[0]).color === this.cardInfo.find((item) => item.id === this.cardsList[1]).color &&
-					this.cardsList[0] !== this.cardsList[1]
+					this.cardInfo.find((item) => item.id === this.openedCardsList[0])
+						.color ===
+						this.cardInfo.find((item) => item.id === this.openedCardsList[1])
+							.color &&
+					this.openedCardsList[0] !== this.openedCardsList[1]
 				) {
 					this.addPoint();
 					this.cardInfo.find(
-						(item) => item.id === this.cardsList[0]
+						(item) => item.id === this.openedCardsList[0]
 					).isDisabled = true;
 					this.cardInfo.find(
-						(item) => item.id === this.cardsList[1]
+						(item) => item.id === this.openedCardsList[1]
 					).isDisabled = true;
-					this.cardsList = [];
-				} else if (this.cardsList[0] === this.cardsList[1]) {
-					this.cardsList = [];
+					this.openedCardsList = [];
+				} else if (this.openedCardsList[0] === this.openedCardsList[1]) {
+					this.openedCardsList = [];
 				} else {
 					setTimeout(() => {
 						this.cardInfo.find(
-							(item) => item.id === this.cardsList[0]
+							(item) => item.id === this.openedCardsList[0]
 						).isActive = false;
 						this.cardInfo.find(
-							(item) => item.id === this.cardsList[1]
+							(item) => item.id === this.openedCardsList[1]
 						).isActive = false;
-						this.cardsList = [];
+						this.openedCardsList = [];
 					}, 400);
 				}
 			}
 		},
 
 		preventClick() {
-			document.querySelector("#app").style.pointerEvents = "none";
-      setTimeout(() => {
-        document.querySelector("#app").style.pointerEvents = "auto";
-      }, 400)
+			this.isClicksAllowed = false;
+			setTimeout(() => {
+				this.isClicksAllowed = true;
+			}, 400);
 		},
 
 		getRandomColor() {
