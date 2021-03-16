@@ -154,14 +154,14 @@
 		height: 100px;
 	}
 }
-.gameplay[data-v-a27616f8] {
+.gameplay[data-v-68f41a9a] {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	max-width: 1000px;
 }
-.cards[data-v-a27616f8] {
+.cards[data-v-68f41a9a] {
 	width: 80vw;
 	max-width: 1000px;
 	display: grid;
@@ -169,17 +169,17 @@
 	gap: 20px 20px;
 }
 @media screen and (max-width: 1000px) {
-	.cards[data-v-a27616f8] {
+	.cards[data-v-68f41a9a] {
 		width: 95vw;
 		grid-template-columns: repeat(auto-fit, minmax(60px, 60px));
 		gap: 6px 6px;
 	}
 }
-.gameplay__timer[data-v-a27616f8] {
+.gameplay__timer[data-v-68f41a9a] {
 	margin: 0 0 10px;
 	align-self: flex-start;
 }
-.gameplay__score[data-v-a27616f8] {
+.gameplay__score[data-v-68f41a9a] {
 	margin: 0 0 20px;
 	align-self: flex-start;
 }
