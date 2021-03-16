@@ -1,5 +1,5 @@
 <template>
-<div class="card card_unactive" @click="openCard" :style="{backgroundColor: isActive ? cardColor : '#6c6874'}"></div>
+<div class="card card_unactive" @click="openCard" :style="{backgroundColor: isActive ? cardColor.color : '#6c6874'}"></div>
 </template>
 
 <script>
@@ -8,12 +8,12 @@ export default {
   name: 'CardTemplate',
 
     props: {
-        cardColor: String
+        cardColor: Object
     },
 
   data() {
       return {
-          isActive: false
+          isActive: this.cardColor.isActive
       }
   },
 
